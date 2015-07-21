@@ -4,4 +4,20 @@
 
 .trailer-playlist {
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.trailer-playlist__item {
+    white-space: normal;
+    display: inline-block;
+    width: 90%;
+    margin: 0;
+    margin-left: -4px;
+}
+
+.trailer-playlist__image {
+    width: 100%;
+    display: block;
 }

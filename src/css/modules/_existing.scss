@@ -14,10 +14,3 @@
 .content-footer {
     display: none;
 }
-
-.l-side-margins {
-    &:before,
-    &:after {
-        z-index: 5;
-    }
-}

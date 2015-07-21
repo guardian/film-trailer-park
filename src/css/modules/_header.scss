@@ -1,0 +1,20 @@
+.trailer-header {
+    background-color: $c-black;
+    border-top: 1px solid $c-yellow;
+    font-family: $f-serif-headline;
+}
+
+.trailer-header__title {
+    margin-top: 6px;
+    color: $c-yellow;
+    font-weight: 900;
+    font-size: 1.8em;
+    line-height: 1;
+}
+
+.trailer-header__standfirst {
+    color: $c-white;
+    font-weight: normal;
+    font-size: 1em;
+    padding-bottom: 2em;
+}

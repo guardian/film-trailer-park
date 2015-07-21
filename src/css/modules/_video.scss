@@ -25,3 +25,42 @@
     width: 100%;
     display: block;
 }
+
+.trailer-video__button {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: 1px solid $c-yellow;
+    border-radius: 50%;
+    margin: auto;
+
+    .trailer-video__button__icon {
+        fill: $c-yellow;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    &.trailer-video__button--prev {
+        left: 12px;
+
+        .trailer-video__button__icon {
+            left: -3px;
+        }
+    }
+
+    &.trailer-video__button--next {
+        right: 12px;
+
+        .trailer-video__button__icon {
+            right: -2px;
+        }
+    }
+}

@@ -27,9 +27,7 @@ define([
         },
 
         loadPlayer: function(container, videoId) {
-            console.log(container);
             container = $(container).find(".trailer-playlist__video")[0];
-            console.log(container);
             new YT.Player(container, {
                 videoId: videoId,
                 // For a list of all parameters, see:

@@ -1,7 +1,9 @@
 define([
-    'libs/jquery'
+    'libs/jquery',
+    'modules/interactions'
 ], function(
-    jQuery
+    jQuery,
+    Interactions
 ) {
     var url = "http://interactive.guim.co.uk/spreadsheetdata/1Gqun8cta67h9KlBriwqzqiPrUwovTBQGsaV4vQFm_7I.json";
     var data = [];
@@ -21,6 +23,7 @@ define([
         render: function() {
             this.renderInfo();
             this.renderVideo();
+            Interactions.init();
         },
 
         renderInfo: function() {

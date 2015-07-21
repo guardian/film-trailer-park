@@ -1,9 +1,11 @@
 define([
     'libs/jquery',
-    'modules/data'
+    'modules/data',
+    'modules/interactions'
 ], function(
     jQuery,
-    Data
+    Data,
+    Interactions
 ) {
     'use strict';
 
@@ -14,8 +16,8 @@ define([
         $(".content--interactive, .article--feature").html(template["index.html"]);
 
         $(window).ready(function() {
-            console.log("ready");
             Data.init();
+            Interactions.init();
         });
     }
 

@@ -1,7 +1,9 @@
 define([
-    'libs/jquery'
+    'libs/jquery',
+    'modules/data'
 ], function(
-    jQuery
+    jQuery,
+    Data
 ) {
     'use strict';
 
@@ -13,6 +15,7 @@ define([
 
         $(window).ready(function() {
             console.log("ready");
+            Data.init();
         });
     }
 

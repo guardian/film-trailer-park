@@ -10,7 +10,7 @@ $mq-breakpoints: (
 
 $c-black: #333333;
 $c-white: #ffffff;
-$c-yellow: #ffb200;
+$c-yellow: #ffbb00;
 
 $f-data: 'Guardian Agate Sans 1 Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $f-serif-text: 'Guardian Text Egyptian Web', Georgia, serif;
@@ -23,4 +23,4 @@ $f-sans-serif-headline: 'Guardian Sans Web', 'Helvetica Neue', Helvetica, Arial,
 @import 'modules/existing';
 @import 'modules/header';
 @import 'modules/video';
-@import 'modules/info';
+@import 'modules/body';

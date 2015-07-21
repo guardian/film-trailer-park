@@ -45,7 +45,9 @@ define([
         renderVideo: function() {
             var videoHtml = "";
             $.each(data, function(index, value) {
-                var html = '<li class="trailer-playlist__item" data-youtube="' + data[index].youtubeurl +'"><img class="trailer-playlist__image" src="' + data[index].imageurl + '" /></li>';
+                var html = '<li class="trailer-playlist__item" data-youtube="' + data[index].youtubeurl +'" style="background-image: url(' + data[index].imageurl + ')">' +
+                                '<div class="trailer-playlist__video"></div>' +
+                            '</li>';
                 videoHtml += html;
             });
             $(".trailer-playlist").html(videoHtml);

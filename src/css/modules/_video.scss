@@ -14,16 +14,23 @@
 }
 
 .trailer-playlist__item {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
     white-space: normal;
     display: inline-block;
     width: 90%;
     margin: 0;
     margin-left: -4px;
-}
 
-.trailer-playlist__image {
-    width: 100%;
-    display: block;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .trailer-video__button {

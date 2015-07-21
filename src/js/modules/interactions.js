@@ -15,7 +15,7 @@ define([
         },
 
         playVideo: function(target) {
-            console.log("hey");
+            // Load the Youtube API if needed
             if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
                 window.onYouTubeIframeAPIReady = function() {
                     this.loadPlayer(target, $(target).attr("data-youtube").split("?v=")[1]);
@@ -28,19 +28,19 @@ define([
 
         loadPlayer: function(container, videoId) {
             console.log(container);
-            console.log(videoId);
+            container = $(container).find(".trailer-playlist__video")[0];
+            console.log(container);
             new YT.Player(container, {
                 videoId: videoId,
-                width: 356,
-                height: 200,
                 // For a list of all parameters, see:
                 // https://developers.google.com/youtube/player_parameters
                 playerVars: {
-                  autoplay: 1,
-                  controls: 0,
-                  modestbranding: 1,
-                  rel: 0,
-                  showinfo: 0
+                    autohide: 1,
+                    autoplay: 1,
+                    color: "#ffbb00",
+                    modestbranding: 1,
+                    rel: 0,
+                    showinfo: 0
                 }
             });
         }

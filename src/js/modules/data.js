@@ -34,7 +34,7 @@ define([
                             '</li>';
                 videoHtml += html;
             });
-            
+
             $(".trailer-playlist").html(videoHtml);
         },
 

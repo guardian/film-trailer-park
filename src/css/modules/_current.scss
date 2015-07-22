@@ -3,5 +3,9 @@
         .trailer-body__item--#{$i} {
             display: block;
         }
+
+        .trailer-playlist {
+            transform: translateX(10% + ($i * -$trailer-width));
+        }
     }
 }

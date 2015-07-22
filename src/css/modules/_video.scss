@@ -3,14 +3,15 @@
 
     .gs-container {
         padding: 0;
+        overflow: hidden;
     }
 }
 
 .trailer-playlist {
     margin: 0;
     white-space: nowrap;
-    overflow: hidden;
     line-height: 0;
+    transition: transform .3s ease-in;
 }
 
 .trailer-playlist__item {
@@ -20,7 +21,7 @@
     height: 0;
     white-space: normal;
     display: inline-block;
-    width: 90%;
+    width: $trailer-width;
     margin: 0;
     background-size: cover;
 

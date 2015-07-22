@@ -5,7 +5,11 @@
         }
 
         .trailer-playlist {
-            transform: translateX(10% + ($i * -$trailer-width));
+            transform: translateX($i * -$trailer-width);
+            
+            @include mq(desktop) {
+                transform: translateX($i * -$trailer-width-desktop);
+            }
         }
     }
 }

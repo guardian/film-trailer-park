@@ -16,7 +16,7 @@
 
 .trailer-playlist__item {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: $trailer-width / 16 * 9;
     padding-top: 25px;
     height: 0;
     white-space: normal;
@@ -24,6 +24,27 @@
     width: $trailer-width;
     margin: 0;
     background-size: cover;
+
+    @include mq(desktop) {
+        width: $trailer-width-desktop;
+        padding-bottom: $trailer-width-desktop / 16 * 9;
+    }
+
+    &.trailer-playlist__item--0 {
+        margin-left: 10%;
+
+        @include mq(desktop) {
+            margin-left: 100px;
+        }
+
+        @include mq(leftCol) {
+            margin-left: 180px;
+        }
+
+        @include mq(wide) {
+            margin-left: 260px;
+        }
+    }
 
     iframe {
         position: absolute;

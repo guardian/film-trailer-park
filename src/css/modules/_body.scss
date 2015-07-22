@@ -9,6 +9,10 @@
     list-style: none;
 }
 
+.trailer-body__item {
+    display: none;
+}
+
 .trailer-info__status {
     color: $c-yellow;
     font-family: $f-sans-serif-text;

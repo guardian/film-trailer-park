@@ -1,0 +1,7 @@
+@for $i from 0 through 20 {
+    .current--#{$i} {
+        .trailer-body__item--#{$i} {
+            display: block;
+        }
+    }
+}

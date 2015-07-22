@@ -1,5 +1,9 @@
 .trailer-body {
     background-color: $c-black;
+
+    .gs-container {
+        display: flex;
+    }
 }
 
 .trailer-body__list {
@@ -7,6 +11,32 @@
     padding: 0;
     padding-top: 12px;
     list-style: none;
+
+    @include mq(desktop) {
+        width: $trailer-width-desktop;
+        margin-right: 20px;
+    }
+}
+
+.trailer-body__list--prev,
+.trailer-body__list--next {
+    width: 50%;
+
+    @include mq(wide) {
+        width: 220px;
+    }
+
+    .trailer-info__title {
+        color: $c-grey;
+    }
+
+    .trailer-info__description {
+        display: none;
+    }
+}
+
+.trailer-body__list--next {
+    margin-right: 0;
 }
 
 .trailer-body__item {

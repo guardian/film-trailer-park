@@ -1,7 +1,21 @@
 @for $i from 0 through 20 {
     .current--#{$i} {
-        .trailer-body__item--#{$i} {
-            display: block;
+        .trailer-body__list--main {
+            .trailer-body__item--#{$i} {
+                display: block;
+            }
+        }
+
+        .trailer-body__list--prev {
+            .trailer-body__item--#{$i - 1} {
+                display: block;
+            }
+        }
+
+        .trailer-body__list--next {
+            .trailer-body__item--#{$i + 1} {
+                display: block;
+            }
         }
 
         .trailer-playlist {

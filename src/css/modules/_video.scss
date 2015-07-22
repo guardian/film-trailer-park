@@ -22,7 +22,6 @@
     display: inline-block;
     width: 90%;
     margin: 0;
-    margin-left: -4px;
     background-size: cover;
 
     iframe {
@@ -38,6 +37,7 @@
     width: 32px;
     height: 32px;
     position: absolute;
+    z-index: 2;
     top: 0;
     bottom: 0;
     border: 1px solid $c-yellow;

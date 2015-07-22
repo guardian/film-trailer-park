@@ -3,14 +3,25 @@ define([
 ], function(
     jQuery
 ) {
+    var current = 0;
+
     return {
         init: function() {
             this.bindings();
+            $(".trailer").addClass("current--" + current);
         },
 
         bindings: function() {
             $(".trailer-playlist__item").click(function(el) {
                 this.playVideo(el.currentTarget);
+            }.bind(this));
+            
+            $(".trailer-video__button--next").click(function() {
+                this.changeVideo("next");
+            }.bind(this));
+
+            $(".trailer-video__button--prev").click(function() {
+                this.changeVideo("prev");
             }.bind(this));
         },
 
@@ -41,6 +52,22 @@ define([
                     showinfo: 0
                 }
             });
+        },
+
+        changeVideo: function(direction) {
+            $(".trailer").removeClass (function (index, css) {
+                return (css.match (/(^|\s)current-\S+/g) || []).join(' ');
+            });
+
+            if (direction === "next") {
+                current += 1;
+            } else if (direction === "prev") {
+                current = current - 1;
+            }
+
+            $(".trailer-playlist__video").replaceWith("<div class='trailer-playlist__video'></div>");
+
+            $(".trailer").addClass("current--" + current);
         }
     };
 });

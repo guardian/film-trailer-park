@@ -61,3 +61,15 @@
         }
     }
 }
+
+.current--0 {
+    .trailer-video__button--prev {
+        display: none;
+    }
+}
+
+.current--20 {
+    .trailer-video__button--next {
+        display: none;
+    }
+}

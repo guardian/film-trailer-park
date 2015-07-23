@@ -2,8 +2,11 @@
     background-color: $c-black;
 
     .gs-container {
-        display: flex;
         height: 300px;
+
+        @include mq(desktop) {
+            display: flex;
+        }
     }
 }
 
@@ -22,7 +25,12 @@
 
 .trailer-body__list--prev,
 .trailer-body__list--next {
-    width: 50%;
+    display: none;
+
+    @include mq(desktop) {
+        width: 140px;
+        display: block;
+    }
 
     @include mq(wide) {
         width: 220px;

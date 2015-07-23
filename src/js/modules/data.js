@@ -41,8 +41,7 @@ define([
         renderInfo: function() {
             var infoHtml = "";
             $.each(data, function(index, value) {
-                var html = '<li class="trailer-body__item trailer-body__item--' + index + '">' +
-                                '<h3 class="trailer-info__status">Now Playing</h3>' +
+                var html = '<li class="trailer-body__item trailer-body__item--' + index + '">' +   
                                 '<h2 class="trailer-info__title">' + data[index].title + '</h2>' +
                                 '<div class="trailer-info__description">' +
                                     '<p>' + data[index].description + '</p>' +
@@ -51,7 +50,7 @@ define([
                             '</li>'
                 infoHtml += html;
             });
-            $(".trailer-body__list").html(infoHtml);
+            $(".trailer-body__list").append(infoHtml);
         }
     };
 });

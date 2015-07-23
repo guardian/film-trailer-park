@@ -4,6 +4,7 @@ define([
     jQuery
 ) {
     var current = 0;
+    var player;
 
     return {
         init: function() {
@@ -39,7 +40,7 @@ define([
 
         loadPlayer: function(container, videoId) {
             container = $(container).find(".trailer-playlist__video")[0];
-            new YT.Player(container, {
+            player = new YT.Player(container, {
                 videoId: videoId,
                 // For a list of all parameters, see:
                 // https://developers.google.com/youtube/player_parameters
@@ -52,9 +53,17 @@ define([
                     showinfo: 0
                 }
             });
+
+            player.addEventListener('onStateChange', this.onStateChange.bind(this));
         },
 
-        changeVideo: function(direction) {
+        onStateChange: function(el) {
+            if (el.data === 0) {
+                this.changeVideo("next", true);
+            }
+        },
+
+        changeVideo: function(direction, autoplay) {
             $(".trailer").removeClass (function (index, css) {
                 return (css.match (/(^|\s)current-\S+/g) || []).join(' ');
             });
@@ -69,6 +78,10 @@ define([
 
             $(".trailer-playlist__video").replaceWith("<div class='trailer-playlist__video'></div>");
             $(".trailer").addClass("current--" + current);
+
+            if (autoplay) {
+                this.playVideo($(".trailer-playlist__item--" + current));
+            }
         }
     };
 });

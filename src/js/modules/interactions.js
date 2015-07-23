@@ -58,6 +58,8 @@ define([
             $(".trailer").removeClass (function (index, css) {
                 return (css.match (/(^|\s)current-\S+/g) || []).join(' ');
             });
+            $(".trailer").removeClass("prev next");
+            $(".trailer").addClass(direction);
 
             if (direction === "next") {
                 current += 1;
@@ -66,7 +68,6 @@ define([
             }
 
             $(".trailer-playlist__video").replaceWith("<div class='trailer-playlist__video'></div>");
-
             $(".trailer").addClass("current--" + current);
         }
     };

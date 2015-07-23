@@ -1,26 +1,52 @@
+@keyframes nextFade {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes prevFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 @for $i from 0 through 20 {
     .current--#{$i} {
-        .trailer-body__list--main {
-            .trailer-body__item--#{$i} {
-                display: block;
+        &.next {
+            .trailer-body__list--main .trailer-body__item--#{$i},
+            .trailer-body__list--prev .trailer-body__item--#{$i - 1},
+            .trailer-body__list--next .trailer-body__item--#{$i + 1} {
+                opacity: 1;
+                animation: nextFade 0.4s ease-out;
             }
         }
 
-        .trailer-body__list--prev {
-            .trailer-body__item--#{$i - 1} {
-                display: block;
-            }
-        }
-
-        .trailer-body__list--next {
-            .trailer-body__item--#{$i + 1} {
-                display: block;
+        &.prev {
+            .trailer-body__list--main .trailer-body__item--#{$i},
+            .trailer-body__list--prev .trailer-body__item--#{$i - 1},
+            .trailer-body__list--next .trailer-body__item--#{$i + 1} {
+                opacity: 1;
+                animation: prevFade 0.4s ease-out;
             }
         }
 
         .trailer-playlist {
             transform: translateX($i * -$trailer-width);
-            
+
             @include mq(desktop) {
                 transform: translateX($i * -$trailer-width-desktop);
             }

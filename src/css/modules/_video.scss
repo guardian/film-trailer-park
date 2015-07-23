@@ -24,6 +24,8 @@
     width: $trailer-width;
     margin: 0;
     background-size: cover;
+    opacity: 0.2;
+    transition: opacity .3s ease-in;
 
     @include mq(desktop) {
         width: $trailer-width-desktop;
@@ -56,20 +58,33 @@
 }
 
 .trailer-video__button {
-    width: 32px;
-    height: 32px;
     position: absolute;
     z-index: 2;
     top: 0;
     bottom: 0;
-    border: 1px solid $c-yellow;
-    border-radius: 50%;
     margin: auto;
+    width: 10%;
+    cursor: pointer;
+
+    @include mq(desktop) {
+        width: 100px;
+    }
+
+    @include mq(leftCol) {
+        width: 180px;
+    }
+
+    @include mq(wide) {
+        width: 260px;
+    }
 
     .trailer-video__button__icon {
         fill: $c-yellow;
         width: 20px;
         height: 20px;
+        padding: 6px;
+        border: 1px solid $c-yellow;
+        border-radius: 50%;
         position: absolute;
         top: 0;
         right: 0;
@@ -79,18 +94,38 @@
     }
 
     &.trailer-video__button--prev {
-        left: 12px;
+        left: 0;
 
         .trailer-video__button__icon {
-            left: -3px;
+            @include mq(desktop) {
+                left: -40px;
+            }
+
+            @include mq(leftCol) {
+                left: -120px;
+            }
+
+            @include mq(wide) {
+                left: -200px;
+            }
         }
     }
 
     &.trailer-video__button--next {
-        right: 12px;
+        right: 0;
 
         .trailer-video__button__icon {
-            right: -2px;
+            @include mq(desktop) {
+                left: 40px;
+            }
+
+            @include mq(leftCol) {
+                left: 120px;
+            }
+
+            @include mq(wide) {
+                left: 200px;
+            }
         }
     }
 }

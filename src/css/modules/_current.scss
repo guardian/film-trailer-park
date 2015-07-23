@@ -48,6 +48,10 @@
             }
         }
 
+        .trailer-playlist__item--#{$i} {
+            opacity: 1;
+        }
+
         .trailer-playlist {
             transform: translateX($i * -$trailer-width);
 

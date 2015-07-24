@@ -25,11 +25,24 @@
     margin: 0;
     background-size: cover;
     opacity: 0.2;
+    cursor: pointer;
     transition: opacity .3s ease-in;
 
     @include mq(desktop) {
         width: $trailer-width-desktop;
         padding-bottom: $trailer-width-desktop / 16 * 9;
+    }
+
+    &:hover {
+        opacity: 0.8;
+
+        .trailer-playlist__button {
+            background-color: $c-yellow;
+
+            .trailer-playlist__button__icon {
+                fill: $c-black;
+            }
+        }
     }
 
     &.trailer-playlist__item--0 {
@@ -134,5 +147,30 @@
         &:hover {
             opacity: .8;
         }
+    }
+}
+
+.trailer-playlist__button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.8);
+
+    .trailer-playlist__button__icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        fill: $c-white;
+        width: 24px;
+        height: 24px;
     }
 }

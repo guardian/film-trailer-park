@@ -31,6 +31,7 @@ define([
             var videoHtml = "";
             $.each(data, function(index, value) {
                 var html = '<li class="trailer-playlist__item trailer-playlist__item--' + index + '" data-youtube="' + data[index].youtubeurl +'" style="background-image: url(' + data[index].imageurl + ');">' +
+                                '<div class="trailer-playlist__button"><svg class="trailer-playlist__button__icon" width="30" height="30" viewBox="0 0 30 30"><path d="M30 15.678L1.037 27.566 0 26.848V3.23l1.037-.797L30 14.4v1.278z"/></svg></div>' +
                                 '<div class="trailer-playlist__video"></div>' +
                             '</li>';
                 videoHtml += html;

@@ -52,6 +52,18 @@
             opacity: 1;
         }
 
+        .trailer-video__button--prev:hover {
+            ~ .trailer-playlist .trailer-playlist__item--#{$i - 1} {
+                opacity: .5;
+            }
+        }
+
+        .trailer-video__button--next:hover {
+            ~ .trailer-playlist .trailer-playlist__item--#{$i + 1} {
+                opacity: .5;
+            }
+        }
+
         .trailer-playlist {
             transform: translateX($i * -$trailer-width);
 

@@ -52,6 +52,7 @@
 
 .trailer-body__item {
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     // transition: opacity .15s ease-in;
 }

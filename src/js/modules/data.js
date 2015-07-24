@@ -7,7 +7,7 @@ define([
 ) {
     var url = "http://interactive.guim.co.uk/spreadsheetdata/1Gqun8cta67h9KlBriwqzqiPrUwovTBQGsaV4vQFm_7I.json";
     var data = [];
-    var shareurl = "hey";
+    var pageurl = window.location.href.split("#")[0];
 
     return {
         init: function() {
@@ -50,19 +50,29 @@ define([
                                 '</div>' +
                                 '<ul class="trailer-info__share social social--top u-unstyled u-cf">' +
                                     '<li class="trailer-info__share__item rounded-icon social-icon social-icon--twitter">' + 
-                                        '<a href="https://twitter.com/intent/tweet?text=' + shareurl + '"><i class="i-share-twitter--white i"></i></a>' +
+                                        '<a href="https://twitter.com/intent/tweet?text=' + this.returnShareUrl("tweet", data[index].title) + '" target="_blank"><i class="i-share-twitter--white i"></i></a>' +
                                     '</li>' +
                                     '<li class="trailer-info__share__item rounded-icon social-icon social-icon--facebook">' + 
-                                        '<a href="https://www.facebook.com/sharer/sharer.php?u=' + shareurl + '&ref=responsive"><i class="i-share-facebook--white i"></i></a>' +
+                                        '<a href="https://www.facebook.com/sharer/sharer.php?u=' + this.returnShareUrl("facebook", data[index].title) + '&ref=responsive" target="_blank"><i class="i-share-facebook--white i"></i></a>' +
                                     '</li>' +
                                     '<li class="trailer-info__share__item rounded-icon social-icon social-icon--email">' + 
-                                        '<a href="mailto:?subject=Trailerz&body=' + shareurl + '"><i class="i-share-email--white i"></i></a>' +
+                                        '<a href="mailto:?' + this.returnShareUrl("email", data[index].title) + '" target="_blank"><i class="i-share-email--white i"></i></a>' +
                                     '</li>' +
                                 '</ul>' +
                             '</li>'
                 infoHtml += html;
-            });
+            }.bind(this));
             $(".trailer-body__list").append(infoHtml);
+        },
+
+        returnShareUrl: function(network, film) {
+            if (network === "tweet") {
+                return encodeURIComponent('Watch the trailer for ' + film + ' on @guardianfilm\'s trailer park: ' + pageurl + "#" + film.toLowerCase());
+            } else if (network === "facebook") {
+                return encodeURIComponent(pageurl + "#" + film.toLowerCase());
+            } else if (network === "email") {
+                return encodeURIComponent('subject=Watch the trailer for ' + film + '&body=' + pageurl + '#' + film.toLowerCase());
+            }
         },
 
         getStartingPoint: function() {

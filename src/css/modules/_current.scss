@@ -30,6 +30,7 @@
         .trailer-body__list--prev .trailer-body__item--#{$i - 1},
         .trailer-body__list--next .trailer-body__item--#{$i + 1} {
             opacity: 1;
+            visibility: visible;
         }
 
         &.next {

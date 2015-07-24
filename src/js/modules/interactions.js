@@ -11,6 +11,9 @@ define([
             this.bindings();
             current = initial;
             $(".trailer").addClass("current--" + current);
+            setTimeout(function() {
+                $(".preload").removeClass("preload");
+            }, 200);
         },
 
         bindings: function() {

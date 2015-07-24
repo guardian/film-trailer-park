@@ -24,6 +24,7 @@ $trailer-width-desktop: 780px;
 
 @import 'vendor/mq';
 
+@import 'modules/base';
 @import 'modules/existing';
 @import 'modules/header';
 @import 'modules/video';

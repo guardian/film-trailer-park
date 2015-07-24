@@ -7,6 +7,7 @@ define([
 ) {
     var url = "http://interactive.guim.co.uk/spreadsheetdata/1Gqun8cta67h9KlBriwqzqiPrUwovTBQGsaV4vQFm_7I.json";
     var data = [];
+    var shareurl = "hey";
 
     return {
         init: function() {
@@ -46,7 +47,17 @@ define([
                                 '<div class="trailer-info__description">' +
                                     '<p>' + data[index].description + '</p>' +
                                 '</div>' +
-                                '<div class="trailer-info__button">Hey I\'m a button</div>' +
+                                '<ul class="trailer-info__share social social--top u-unstyled u-cf">' +
+                                    '<li class="trailer-info__share__item rounded-icon social-icon social-icon--twitter">' + 
+                                        '<a href="https://twitter.com/intent/tweet?text=' + shareurl + '"><i class="i-share-twitter--white i"></i></a>' +
+                                    '</li>' +
+                                    '<li class="trailer-info__share__item rounded-icon social-icon social-icon--facebook">' + 
+                                        '<a href="https://www.facebook.com/sharer/sharer.php?u=' + shareurl + '&ref=responsive"><i class="i-share-facebook--white i"></i></a>' +
+                                    '</li>' +
+                                    '<li class="trailer-info__share__item rounded-icon social-icon social-icon--email">' + 
+                                        '<a href="mailto:?subject=Trailerz&body=' + shareurl + '"><i class="i-share-email--white i"></i></a>' +
+                                    '</li>' +
+                                '</ul>' +
                             '</li>'
                 infoHtml += html;
             });

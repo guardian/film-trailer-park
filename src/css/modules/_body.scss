@@ -40,7 +40,8 @@
         color: $c-grey;
     }
 
-    .trailer-info__description {
+    .trailer-info__description,
+    .trailer-info__share {
         display: none;
     }
 }
@@ -77,4 +78,12 @@
     margin-bottom: 1em;
     color: darken($c-white, 20%);
     font-family: $f-serif-text;
+}
+
+.trailer-info__share__item {
+    margin-right: 6px;
+
+    &:hover {
+        opacity: .8;
+    }
 }

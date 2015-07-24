@@ -24,7 +24,7 @@
     }
 }
 
-@for $i from 0 through 20 {
+@for $i from 0 through 19 {
     .current--#{$i} {
         .trailer-body__list--main .trailer-body__item--#{$i},
         .trailer-body__list--prev .trailer-body__item--#{$i - 1},
@@ -66,10 +66,18 @@
     .trailer-video__button--prev {
         display: none;
     }
+
+    .trailer-body__list--prev {
+        opacity: 0;
+    }
 }
 
-.current--20 {
-    .trailer-video__button--next {
+.current--19 {
+    .trailer-video__button--next, {
         display: none;
+    }
+
+    .trailer-body__list--next {
+        opacity: 0;
     }
 }

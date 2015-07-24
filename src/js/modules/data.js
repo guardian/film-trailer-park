@@ -23,7 +23,7 @@ define([
         render: function() {
             this.renderVideo();
             this.renderInfo();
-            Interactions.init();
+            Interactions.init(this.getStartingPoint());
         },
 
         renderVideo: function() {
@@ -51,6 +51,18 @@ define([
                 infoHtml += html;
             });
             $(".trailer-body__list").append(infoHtml);
+        },
+
+        getStartingPoint: function() {
+            var url = window.location.hash.replace("#", "");
+            var current = 0;
+            $.each(data, function(index, value) {
+                if (url.toUpperCase() == data[index].title.toUpperCase()) {
+                    current = index;
+                    return;
+                }
+            });
+            return current;
         }
     };
 });

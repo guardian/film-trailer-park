@@ -7,8 +7,9 @@ define([
     var player;
 
     return {
-        init: function() {
+        init: function(initial) {
             this.bindings();
+            current = initial;
             $(".trailer").addClass("current--" + current);
         },
 

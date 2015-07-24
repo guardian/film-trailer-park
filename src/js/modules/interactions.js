@@ -83,6 +83,8 @@ define([
             $(".trailer-playlist__video").replaceWith("<div class='trailer-playlist__video'></div>");
             $(".trailer").addClass("current--" + current);
 
+            window.location.hash = $(".trailer-body__item--" + current + " .trailer-info__title").html().toLowerCase();
+
             if (autoplay) {
                 this.playVideo($(".trailer-playlist__item--" + current));
             }

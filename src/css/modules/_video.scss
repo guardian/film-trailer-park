@@ -128,4 +128,11 @@
             }
         }
     }
+
+    &.trailer-video__button--prev,
+    &.trailer-video__button--next {
+        &:hover {
+            opacity: .8;
+        }
+    }
 }

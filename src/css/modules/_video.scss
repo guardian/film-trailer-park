@@ -46,7 +46,7 @@
     }
 
     &.trailer-playlist__item--0 {
-        margin-left: 10%;
+        margin-left: 15%;
 
         @include mq(desktop) {
             margin-left: 100px;
@@ -88,7 +88,7 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 10%;
+    width: 15%;
     cursor: pointer;
 
     @include mq(desktop) {
@@ -157,7 +157,10 @@
     &.trailer-video__button--prev,
     &.trailer-video__button--next {
         &:hover {
-            opacity: .8;
+            .trailer-video__button__icon {
+                background-color: $c-yellow;
+                fill: $c-black;
+            }
         }
     }
 }

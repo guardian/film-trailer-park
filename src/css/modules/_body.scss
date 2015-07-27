@@ -81,6 +81,10 @@
     font-family: $f-serif-text;
 }
 
+.trailer-info__share {
+    height: auto;
+}
+
 .trailer-info__share__item {
     margin-right: 6px;
 
@@ -96,10 +100,14 @@
     height: 2rem;
     line-height: 2.1rem;
 
+    @include mq($until: tablet) {
+        margin-top: 6px;
+        display: table;
+    }
+
     &:hover,
     &:focus,
     &:active {
-        color: $c-black;
-        background-color: $c-yellow;
+        background-color: lighten($c-black, 5%);
     }
 }

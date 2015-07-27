@@ -2,7 +2,7 @@
     background-color: $c-black;
 
     .gs-container {
-        height: 300px;
+        height: 260px;
 
         @include mq(desktop) {
             display: flex;

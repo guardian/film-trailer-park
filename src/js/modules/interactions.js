@@ -9,6 +9,7 @@ define([
     return {
         init: function(initial) {
             this.bindings();
+            console.log("test");
             current = initial;
             $(".trailer").addClass("current--" + current);
             setTimeout(function() {
@@ -18,6 +19,7 @@ define([
 
         bindings: function() {
             $(".trailer-playlist__item").click(function(el) {
+                console.log(el.currentTarget);
                 this.playVideo(el.currentTarget);
             }.bind(this));
             
@@ -44,6 +46,7 @@ define([
 
         loadPlayer: function(container, videoId) {
             container = $(container).find(".trailer-playlist__video")[0];
+            console.log(player);
             player = new YT.Player(container, {
                 videoId: videoId,
                 // For a list of all parameters, see:
@@ -57,6 +60,7 @@ define([
                     showinfo: 0
                 }
             });
+            console.log(player);
 
             player.addEventListener('onStateChange', this.onStateChange.bind(this));
         },

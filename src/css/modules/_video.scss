@@ -61,6 +61,15 @@
         }
     }
 
+    @keyframes iframeFade {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     iframe {
         position: absolute;
         top: 0;
@@ -69,6 +78,7 @@
         height: 100%;
         z-index: 400;
         backface-visibility: hidden;
+        animation: iframeFade 0.5s ease-in;
     }
 }
 

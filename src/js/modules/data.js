@@ -43,6 +43,7 @@ define([
         renderInfo: function() {
             var infoHtml = "";
             $.each(data, function(index, value) {
+                console.log(data[index].tag);
                 var html = '<li class="trailer-body__item trailer-body__item--' + index + '">' +   
                                 '<h2 class="trailer-info__title">' + data[index].title + '</h2>' +
                                 '<div class="trailer-info__description">' +
@@ -58,6 +59,7 @@ define([
                                     '<li class="trailer-info__share__item rounded-icon social-icon social-icon--email">' + 
                                         '<a href="mailto:?' + this.returnShareUrl("email", data[index].title) + '" target="_blank"><i class="i-share-email--white i"></i></a>' +
                                     '</li>' +
+                                    (data[index].tag !== '' ? '<a class="trailer-info__button button button--medium" href="' + data[index].tag + '">Learn more about ' + data[index].title + '</a>': "" ) +
                                 '</ul>' +
                             '</li>'
                 infoHtml += html;

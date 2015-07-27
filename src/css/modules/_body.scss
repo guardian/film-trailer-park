@@ -88,3 +88,18 @@
         opacity: .8;
     }
 }
+
+.trailer-info__button {
+    background-color: lighten($c-black, 10%);
+    color: $c-yellow;
+    border: 0;
+    height: 2rem;
+    line-height: 2.1rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $c-black;
+        background-color: $c-yellow;
+    }
+}

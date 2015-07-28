@@ -28,6 +28,17 @@ define([
             $(".trailer-video__button--prev").click(function() {
                 this.changeVideo("prev");
             }.bind(this));
+            $(document).keydown(function(e) {
+                switch(e.which) {
+                    // left arrow
+                    case 37: this.changeVideo("prev");
+                    break;
+
+                    // right arrow
+                    case 39:this.changeVideo("next");
+                    break;
+                }
+            }.bind(this));
         },
 
         playVideo: function(target) {
@@ -77,6 +88,12 @@ define([
                 current += 1;
             } else if (direction === "prev") {
                 current = current - 1;
+            }
+
+            if (current > 19) {
+                current = 19;
+            } else if (current < 0) {
+                current = 0;
             }
 
             $(".trailer-playlist__video").replaceWith("<div class='trailer-playlist__video'></div>");

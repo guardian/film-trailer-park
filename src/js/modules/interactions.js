@@ -5,10 +5,12 @@ define([
 ) {
     var current = 0;
     var player;
+    var numOfTrailers = 0;
 
     return {
-        init: function(initial) {
+        init: function(initial, mediator) {
             this.bindings();
+            this.mediator = mediator;
             current = initial;
             $(".trailer").addClass("current--" + current);
             setTimeout(function() {
@@ -53,6 +55,15 @@ define([
             }
         },
 
+        returnCurrentTitle: function() {
+            return $(".trailer-body__item--" + current + " .trailer-info__title").html().toLowerCase();
+        },
+
+        returnNumberOfTrailers: function() {
+            numOfTrailers += 1;
+            return numOfTrailers;
+        },
+
         loadPlayer: function(container, videoId) {
             container = $(container).find(".trailer-playlist__video")[0];
             player = new YT.Player(container, {
@@ -67,8 +78,8 @@ define([
                     showinfo: 0
                 }
             });
+            this.sendVideoEvent();
             player.addEventListener('onStateChange', this.onStateChange.bind(this));
-            console.log("load player 2");
         },
 
         onStateChange: function(el) {
@@ -99,11 +110,18 @@ define([
             $(".trailer-playlist__video").replaceWith("<div class='trailer-playlist__video'></div>");
             $(".trailer").addClass("current--" + current);
 
-            window.location.hash = $(".trailer-body__item--" + current + " .trailer-info__title").html().toLowerCase();
+            window.location.hash = this.returnCurrentTitle();
 
             if (autoplay) {
                 this.playVideo($(".trailer-playlist__item--" + current));
             }
+        },
+
+        sendVideoEvent: function() {
+            this.mediator.emit('trailer/ophan-event', {
+                trailerName: this.returnCurrentTitle(),
+                numOfTrailers: this.returnNumberOfTrailers()
+            });
         }
     };
 });

@@ -7,14 +7,14 @@ define([
 ) {
     'use strict';
 
-    function init(el) {
+    function init(el, context, config, mediator) {
         var muted =  false;
 
         @@template@@
         $(".content--interactive, .article--feature").html(template["index.html"]);
 
         $(window).ready(function() {
-            Data.init();
+            Data.init(mediator);
         });
     }
 
